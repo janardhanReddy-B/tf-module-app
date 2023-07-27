@@ -1,4 +1,4 @@
-#iam plociy
+#iam policy
 resource "aws_iam_policy" "policy" {
   name        = "${var.component}-${var.env}-ssm-policy"
   path        = "/"
@@ -39,7 +39,7 @@ resource "aws_iam_role" "role" {
     ]
   })
 }
-#plociy attch
+#plociy attach
 resource "aws_iam_role_policy_attachment" "role_attach" {
   role       = aws_iam_role.role.name
   policy_arn = aws_iam_policy.policy.arn
