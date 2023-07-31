@@ -78,9 +78,10 @@ resource "aws_instance" "ec2" {
   vpc_security_group_ids = [aws_security_group.sg.id]
   iam_instance_profile = aws_iam_instance_profile.profile.name
 
-  tags = {
+  tags = merge ({
     Name = "${var.component}-${var.env}"
-  }
+  },
+  var.tags)
 }
 #dns
 resource "aws_route53_record" "web" {
