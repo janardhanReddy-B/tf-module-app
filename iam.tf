@@ -22,7 +22,6 @@ resource "aws_iam_policy" "policy" {
           var.kms_arn
         ], var.extra_param_access)
       }
-      }
     ]
   })
 }
