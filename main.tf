@@ -24,13 +24,6 @@ resource "aws_security_group" "main" {
     cidr_blocks = var.allow_ssh_cidr
 
   }
-  ingress {
-    from_port   = 80
-    to_port     = 80
-    protocol    = "tcp"
-    cidr_blocks = var.allow_ssh_cidr
-
-  }
 
   egress {
     from_port   = 0
@@ -74,7 +67,7 @@ resource "aws_lb_listener_rule" "static" {
 
   condition {
     host_header {
-      values = ["${var.component}-${var.env}.rdevopsb73.online"]
+      values = ["${var.component}-${var.env}.devopsbjr.online"]
     }
   }
 }
