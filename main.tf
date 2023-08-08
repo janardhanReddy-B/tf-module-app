@@ -66,7 +66,7 @@ resource "aws_lb_listener_rule" "static" {
 
   condition {
     host_header {
-      values = ["${var.component}-${var.env}.devopsbjr.online"]
+      values = ["${local.dns_name}.devopsbjr.online"]
     }
   }
 }
