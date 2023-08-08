@@ -110,7 +110,7 @@ resource "aws_autoscaling_group" "main" {
 #dns
 resource "aws_route53_record" "dns" {
   zone_id = "Z03052753T4U1K1QH805F"
-  name    = "${var.component}-${var.env}"
+  name    = local.dns_name
   type    = "CNAME"
   ttl     = 30
   records = [var.lb_dns_name]
